@@ -1,0 +1,49 @@
+{
+  "name": "graphql_ppx_bin",
+  "version": "0.0.4-2",
+  "preferGlobal": false,
+  "description": "Globally Installable CLI Tools For ReasonML",
+  "main": "index.js",
+  "notes": "Do not include a postinstall script - it will be added for you",
+  "scripts": {
+    "test":
+      "which refmt && which ocamlmerlin && which rebuild && refmt ----where && reactjs_jsx_ppx_v2 ----where && reactjs_jsx_ppx_v3 ----where"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/reasonml/reason-cli.git"
+  },
+  "keywords": ["ReasonML", "graphql_ppx", "bucklescript"],
+  "author": "Jordan",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/reasonml/reason-cli/issues"
+  },
+  "esy": {
+    "release": {
+      "releasedBinaries": ["graphql_ppx.native", "send-introspection-query"],
+      "NOTES": [
+        "Make the release as lean as you want! Just remove packed binary zips until the executables",
+        " you released above, no longer work correctly."
+      ],
+      "deleteFromBinaryRelease": [
+        "*camlp4-*",
+        "*esy_ocaml__slash__esy_installer-*",
+        "*topkg-*",
+        "*esy_ocaml__slash__substs-*",
+        "*conf_which-*",
+        "*conf_m4-*",
+        "*cppo-*",
+        "*jbuilder-*"
+      ]
+    }
+  },
+  "homepage": "https://github.com/reasonml/reason-cli#readme",
+  "dependencies": {
+    "graphql_ppx": "^0.0.1"
+  },
+  "devDependencies": {
+    "ocaml": "~4.2.3001",
+    "@opam/graphql_ppx": "0.0.4"
+  }
+}
